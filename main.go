@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-	"io"
 	"log"
 	"os"
 	"path"
@@ -115,13 +114,7 @@ func getExistingCovers(coversFolder string) (map[string]bool, error) {
 }
 
 func readGameSerials(cacheFilePath string) (map[string]bool, error) {
-	file, err := os.Open(cacheFilePath)
-	if err != nil {
-		return nil, fmt.Errorf("failed to open cache file: %v", err)
-	}
-	defer file.Close()
-
-	fileContent, err := io.ReadAll(file)
+	fileContent, err := os.ReadFile(cacheFilePath)
 	if err != nil {
 		return nil, fmt.Errorf("failed to read cache file: %v", err)
 	}
