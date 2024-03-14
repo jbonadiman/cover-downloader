@@ -15,7 +15,7 @@ import (
 	"github.com/jbonadiman/cover-downloader/internal/parser"
 )
 
-const coverURLTemplate = "https://raw.githubusercontent.com/xlenore/ps2-covers/main/covers/%s.jpg"
+const coverURLTemplate = "https://raw.githubusercontent.com/xlenore/ps2-covers/main/covers/default/%s.jpg"
 
 type Args struct {
 	Path string
